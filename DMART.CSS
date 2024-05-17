@@ -1,0 +1,100 @@
+*{
+margin: 0px;
+  }
+  .nav1{
+      display: flex;
+    }
+    .logo{
+    height: 65px;
+    width: 177px;
+    }.logo img{
+      height: 65px;
+      width: 177px;
+      }
+    .location{
+      height: 65px;
+      width: 138px;
+    } .location img {
+      height: 25px;
+      width: 25px;
+    }
+    .address{
+      height: 65px;
+      width: 240px;
+    }
+    .address img{
+      height: 20px;
+      width:20px;
+    }
+    .search{
+      height: 65px;
+      width: 443px;
+    }
+    .login{
+      height: 65px;
+      width: 180px;
+    }.login img{
+      height: 25px;
+      width: 25px;
+    }
+    .cart{
+      height: 65px;
+      width: 115px;
+    }.cart img{
+      height: 25px;
+      width: 25px;
+    }
+    .menu{
+      height: 43px;
+      width: 219px;
+    }
+    .location1{
+      width: 18px;
+      height: 24px;
+    }
+    .clock1{
+      width: 19px;
+      height: 19px;
+    }
+    .login1{
+      width: 23px;
+      height: 24px;
+    }
+    .cr{
+      height: 20px;
+      width: 20px;
+    }
+    .search_searchCntr_FAvmk .search_searchInput_MOtyO {
+      width: 100%;
+      text-indent: 15px;
+      height: 42px;
+      font-family: Mulish, sans-serif;
+      font-weight: 400;
+      font-size: var(--font-xs);
+      border: 1px solid #d3d3d3;
+      box-shadow: 1px 1px 3px #d3d3d3;
+      outline: none;
+      background: #f5f5f5;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;}
+    
+    #scrInput{
+      height: 36px;
+      width: 318px;
+    }
+    .menu > img{
+      height: 14px;
+      width: 14px;
+    }
+    
+    .nav2{
+      display: flex;
+    }
+    .nav2:last-child a{
+      margin-right: 18px;
+      text-decoration: none;
+      color: grey;
+    }
+    .nav2:last-child a:hover{
+      color: red;
+    }
