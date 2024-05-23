@@ -1,4 +1,3 @@
-
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -11,13 +10,14 @@ carousel();
 function carousel() {
 var i;
 var x = document.getElementsByClassName("mySlides");
+
 for (i = 0; i < x.length; i++) {
   x[i].style.display = "none";  
 }
 myIndex++;
 if (myIndex > x.length) {myIndex = 1}    
 x[myIndex-1].style.display = "block";  
-setTimeout(carousel, 4000); // Change image every 9 seconds
+setTimeout(carousel, 5000); // Change image every 9 seconds
 }
 function showDivs(n) {
   var i;
@@ -32,3 +32,6 @@ function showDivs(n) {
 website.listen(5500,() =>{
   console.log("server created successfully")
 })
+
+
+
