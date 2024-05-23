@@ -5,7 +5,7 @@ function plusDivs(n) {
   showDivs(slideIndex += n);
 }
 var myIndex = 0;
-carousel2();
+
 function carousel2() {
     var i;
   var z=document.getElementsByClassName("mySlides3");
@@ -27,6 +27,7 @@ function carousel2() {
     }
     z[slideIndex-1].style.display = "block";  
   }
+  carousel2();
   website.listen(5500,() =>{
     console.log("server created successfully")
   })
