@@ -1,7 +1,7 @@
-let images = ["IMAGES/7nove23-crsl-brand-mcaffeine1.webp", "IMAGES/15mar24-crsl-brand-sirona-50off.webp"]; // Array of image paths
+let images = ["IMAGES/babycare.webp", "IMAGES/cookware.webp"]; // Array of image paths
 let currentImageIndex = 0; // Keeps track of the current image displayed
 
-const imageElement = document.getElementById("image6");
+const imageElement = document.getElementById("image7");
 
 function nextImage() {
   currentImageIndex = (currentImageIndex + 1) % images.length;
