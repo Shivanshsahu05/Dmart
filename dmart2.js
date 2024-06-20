@@ -10,7 +10,7 @@ function carousel2() {
     var i;
   var z=document.getElementsByClassName("mySlides3");
   for (i = 0; i < z.length; i++) {
-    z[i].style.display = "none";  
+    z[i].style.display = "block";  
   }
   myIndex++;
   if (myIndex > z.length) {myIndex = 1}    
@@ -23,7 +23,7 @@ function carousel2() {
     if (n > z.length) {slideIndex = 1}
     if (n < 1) {slideIndex = z.length}
     for (i = 0; i < z.length; i++) {
-     z[i].style.display = "none";  
+     z[i].style.display = "block";  
     }
     z[slideIndex-1].style.display = "block";  
   }
@@ -31,4 +31,6 @@ function carousel2() {
   website.listen(5500,() =>{
     console.log("server created successfully")
   })
+     
+
   
