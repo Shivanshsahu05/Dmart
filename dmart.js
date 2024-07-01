@@ -32,7 +32,3 @@ function showDivs(n) {
 website.listen(5500,() =>{
   console.log("server created successfully")
 })
-
-
-
-

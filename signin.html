@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+   <link rel="stylesheet" href="signin.css">
+</head>
+
+<body>
+    <div>
+    <h1>Sign In</h1>
+    <form
+        onsubmit="event.preventDefault(); saveLogin(document.getElementById('username').value,document.getElementById('Email').value, document.getElementById('password').value)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br>
+        <label for="Email">Email :  </label>
+        <input type="email" id="Email" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+        <a href="signup.html">New User</a><br>
+        <button type="submit" id="signin">Sign In</button>
+    </form>
+    <script>
+        function saveLogin(username,Email, password) {
+            // Convert data to JSON for secure storage (optional)
+            const loginData = JSON.stringify({ username, Email, password });
+
+            localStorage.setItem("userData", loginData);
+            let signin = document.getElementById('signin');
+            signin.addEventListener('click', function () {
+
+                // change the document to
+                location.replace(
+                    "dmart.html");
+            })
+        }
+    </script>
+    </div>
+</body>
+
+</html>
