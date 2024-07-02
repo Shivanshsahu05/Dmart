@@ -74,3 +74,7 @@ function isRegisterFormValidated(fd){
     }
     return true;
 }
+let submit=document.getElementById('submit');
+submit.addEventListener('click',function(){
+    window.location.href="dmart.html";
+})

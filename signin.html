@@ -9,32 +9,83 @@
 
 <body>
     <div>
-    <h1>Sign In</h1>
-    <form
-        onsubmit="event.preventDefault(); saveLogin(document.getElementById('username').value,document.getElementById('Email').value, document.getElementById('password').value)">
-        <label for="username">Username:</label>
-        <input type="text" id="username" required><br>
-        <label for="Email">Email :  </label>
-        <input type="email" id="Email" required><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" required><br>
-        <a href="signup.html">New User</a><br>
-        <button type="submit" id="signin">Sign In</button>
-    </form>
+    <div class="col signin">
+                    <h3>Sign-In</h3>
+                    <p>
+                        We've built a new experience allowing you to keep track of your Dmart products and orders all in one place.
+                    </p>
+                    <form action="" id="loginform">
+                        <input type="email" name="email" placeholder="Enter your email" class ="email" required/>
+                        <br/>
+                        <br/>
+                        <input type="password" name="password" placeholder="enter your Password" class ="email" required/>
+                        <br/>
+                        <br/>
+                        <input type="submit" name ="submit" placeholder="Sign-In" class="submit"/>
+                    </form>
+                    <br/>
+                    <a href="#" id="forget">Forget Password</a>
+                </div>
     <script>
-        function saveLogin(username,Email, password) {
-            // Convert data to JSON for secure storage (optional)
-            const loginData = JSON.stringify({ username, Email, password });
-
-            localStorage.setItem("userData", loginData);
-            let signin = document.getElementById('signin');
-            signin.addEventListener('click', function () {
-
-                // change the document to
-                location.replace(
-                    "dmart.html");
-            })
+       //code to access form having id "loginform" starts here
+let loginForm = document.getElementById("loginform");
+//code to reset the form
+loginForm.addEventListener('reset', (event) => clearForm(event));
+//code to submit the login form
+loginForm.addEventListener('submit', function(event){
+    //create FormData object for loginForm
+    let fd = new FormData(event.target);
+    //check if form is validated or not
+    if(isLoginFormValidated(fd)){
+        //You are here means form is validated
+        //check if username exists in the local storage
+        let userData = localStorage.getItem(fd.get("email"));
+        let isLoginSuccesssful = true;
+        if(userData == null){
+            //you are here means username doesn't exists
+            isLoginSuccesssful = false;
+        }else{
+            //convert the userData to the object from String type
+            userData = JSON.parse(userData)
+            if(userData["password"] != loginForm.password.value){
+                //you are here means password is incorrect
+                isLoginSuccesssful = false;
+            }
         }
+        if(!isLoginSuccesssful){
+            //you are here means username and password mismatched
+            alert("Invalid email or password");
+            event.preventDefault();
+        }else{
+            let sub=document.getElementsByClassName('submit');
+            //you are here means username and password are valid
+            alert("Login Successful");
+            //write the name of logged in user to localstorage for the key 'loggedInUser'
+            localStorage.setItem('loggedInUser', userData["name"])
+            //load a new page that is login protected and display some name of user there
+            window.location.href = "dashboard.html";
+            
+        }
+    }
+    event.preventDefault();
+})
+
+function isLoginFormValidated(fd){
+    let message = "";
+    if(fd.get('email').trim().length == 0){
+        //you are here means no value for name
+        message = "Please provide email";
+    }
+    if(fd.get('password').length == 0){
+        //you are here means no value for password
+        message != ""?(message+="\nPlease provide password"):(message = "Please provide password");
+    }
+    if(message != ""){
+        alert(message);
+        return false;
+    }
+    return true;
+}
     </script>
     </div>
 </body>
